@@ -20,9 +20,9 @@ class MainTest {
 
   private void callInputValidation(String[] oneParam) {
     IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> Main.validateInputSize(oneParam));
-    assertEquals("Incorrect input parameters. \n "
+    assertEquals("Incorrect input parameters.\n"
         + "The correct way of executing the app is: "
-        + "java -jar TriangleClassifier <Side a> <Side b> <Side c>", e.getMessage());
+        + "java -jar TriangleClassifier <length of side a> <length of side b> <length of side c>", e.getMessage());
   }
 
   @Test
