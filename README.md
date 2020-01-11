@@ -7,10 +7,10 @@ Small console application that determines the type of a triangle based on the le
  
 ## How to build locally
  1. ```git clone``` ...
- 2. ```mvn clean install```
+ 2. ```mvn package```
  3. the jar file will be present in target directory
 
 ## How to run
 ```
-$ java -jar triangle-classifier-1.0.jar 2 3 4
+$ java -jar TriangleClassifier.jar 1 2 3
 ```

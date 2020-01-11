@@ -1,11 +1,10 @@
 package com.foursixfour;
 
-import com.foursixfour.TriangleClassifier;
 import org.junit.jupiter.api.Test;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TriangleClassifierTest {
 
@@ -23,9 +22,7 @@ class TriangleClassifierTest {
 
   private void callInputValidation(String[] oneParam) {
     IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> TriangleClassifier.validateInputSize(oneParam));
-    assertEquals("Incorrect input parameters.\n"
-        + "The correct way of executing the app is: "
-        + "java -jar com.foursixfour.TriangleClassifier <length of side a> <length of side b> <length of side c>", e.getMessage());
+    assertTrue(e.getMessage().contains("Amount of inputs is incorrect"));
   }
 
   @Test
@@ -40,9 +37,6 @@ class TriangleClassifierTest {
 
   private void callCharacterValidation(String[] oneParam) {
     IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> TriangleClassifier.validateCharacters(oneParam));
-    assertEquals(  "Incorrect input parameters.\n"
-        + "The correct way of executing the app is: "
-        + "java -jar com.foursixfour.TriangleClassifier <length of side a> <length of side b> <length of side c>",
-        e.getMessage());
+    assertTrue(e.getMessage().contains("Not all input characters are numeric"));
   }
 }
