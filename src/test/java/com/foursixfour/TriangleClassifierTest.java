@@ -1,10 +1,13 @@
+package com.foursixfour;
+
+import com.foursixfour.TriangleClassifier;
 import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class MainTest {
+class TriangleClassifierTest {
 
   @Test
   void shouldReturnErrorMessageWhenInputParamAmountIsIncorrect() {
@@ -14,15 +17,15 @@ class MainTest {
     callInputValidation(oneParam);
     String[] twoParam = {"1", "2"};
     callInputValidation(twoParam);
-    String[] fourParam = {"10", "2", "3" ,"4"};
+    String[] fourParam = {"1", "2", "3" ,"4"};
     callInputValidation(fourParam);
   }
 
   private void callInputValidation(String[] oneParam) {
-    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> Main.validateInputSize(oneParam));
+    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> TriangleClassifier.validateInputSize(oneParam));
     assertEquals("Incorrect input parameters.\n"
         + "The correct way of executing the app is: "
-        + "java -jar TriangleClassifier <length of side a> <length of side b> <length of side c>", e.getMessage());
+        + "java -jar com.foursixfour.TriangleClassifier <length of side a> <length of side b> <length of side c>", e.getMessage());
   }
 
   @Test
@@ -36,9 +39,10 @@ class MainTest {
   }
 
   private void callCharacterValidation(String[] oneParam) {
-    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> Main.validateCharacters(oneParam));
-    assertEquals("Incorrect input parameters. \n "
+    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> TriangleClassifier.validateCharacters(oneParam));
+    assertEquals(  "Incorrect input parameters.\n"
         + "The correct way of executing the app is: "
-        + "java -jar TriangleClassifier <Side a> <Side b> <Side c>", e.getMessage());
+        + "java -jar com.foursixfour.TriangleClassifier <length of side a> <length of side b> <length of side c>",
+        e.getMessage());
   }
 }

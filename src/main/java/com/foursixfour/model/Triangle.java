@@ -1,4 +1,5 @@
-import java.util.Arrays;
+package com.foursixfour.model;
+
 import java.util.stream.Stream;
 
 public class Triangle {
@@ -7,7 +8,7 @@ public class Triangle {
   private int sideB;
   private int sideC;
 
-  Triangle(int sideA, int sideB, int sideC) {
+  public Triangle(int sideA, int sideB, int sideC) {
     if(Stream.of(sideA, sideB, sideC).anyMatch(a -> a < 1)) {
       throw new IllegalArgumentException("All sides must be positive numbers");
     }
