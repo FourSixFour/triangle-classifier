@@ -1,5 +1,7 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TriangleTest {
 
@@ -9,18 +11,25 @@ class TriangleTest {
   @Test
   void whenAllSidesAreOfEqualLengthReturnEquilateral() {
     triangle = new Triangle(2,2,2);
-    Assertions.assertEquals(TriangleType.EQUILATERAL, triangle.getType());
+    assertEquals(TriangleType.EQUILATERAL, triangle.getType());
   }
 
   @Test
   void whenTwoSidesAreOfEqualLengthReturnIsosceles() {
     triangle = new Triangle(2,2,1);
-    Assertions.assertEquals(TriangleType.ISOSCELES, triangle.getType());
+    assertEquals(TriangleType.ISOSCELES, triangle.getType());
   }
 
   @Test
   void whenNoSidesAreOfEqualLengthReturnScalene() {
     triangle = new Triangle(1,2,3);
-    Assertions.assertEquals(TriangleType.SCALENE, triangle.getType());
+    assertEquals(TriangleType.SCALENE, triangle.getType());
+  }
+
+  @Test
+  void whenNonPositiveNumbersArePassedReturnErrorMessage() {
+    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () ->
+    new Triangle(-1,2,3));
+    assertEquals("All sides must be positive numbers", e.getMessage());
   }
 }
