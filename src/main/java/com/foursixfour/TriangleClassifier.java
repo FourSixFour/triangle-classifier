@@ -1,9 +1,12 @@
 package com.foursixfour;
 
 import com.foursixfour.model.Triangle;
+import com.foursixfour.model.TriangleType;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.Arrays;
+
+import static java.lang.Integer.parseInt;
 
 
 public class TriangleClassifier {
@@ -18,14 +21,18 @@ public class TriangleClassifier {
     try {
       validateInputSize(args);
       validateCharacters(args);
-
-      Triangle triangle = new Triangle(
-          Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-      System.out.println("The type of your triangle is " + triangle.getType().toString().toLowerCase() + "!");
+      System.out.println("The type of your triangle is " + getTriangleTypeName(args) + "!");
     } catch (IllegalArgumentException e) {
       System.err.println(e.getMessage());
       System.err.println(invalidInputMessage);
     }
+  }
+
+  private static String getTriangleTypeName(String[] args) {
+    return new Triangle(parseInt(args[0]), parseInt(args[1]), parseInt(args[2]))
+        .getType()
+        .toString()
+        .toLowerCase();
   }
 
   public static void validateInputSize(String[] args) {
