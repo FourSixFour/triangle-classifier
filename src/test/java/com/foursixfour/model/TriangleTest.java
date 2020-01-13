@@ -2,6 +2,7 @@ package com.foursixfour.model;
 
 import org.junit.jupiter.api.Test;
 
+import static com.foursixfour.model.ErrorMessages.SIDES_TOO_SMALL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -32,6 +33,6 @@ class TriangleTest {
   void whenNonPositiveNumbersArePassedReturnErrorMessage() {
     IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () ->
     new Triangle(-1,2,3));
-    assertEquals("All sides must be positive numbers", e.getMessage());
+    assertEquals(SIDES_TOO_SMALL.getMessage(), e.getMessage());
   }
 }

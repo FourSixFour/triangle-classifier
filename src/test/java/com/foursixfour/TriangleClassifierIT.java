@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static com.foursixfour.model.ErrorMessages.NON_NUMERIC_PARAMS;
+import static com.foursixfour.model.ErrorMessages.SIDES_TOO_SMALL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 class TriangleClassifierIT {
 
@@ -27,7 +29,7 @@ class TriangleClassifierIT {
   void shouldRespondWithEquilateral() {
     String[] args = {"5", "5", "5"};
     TriangleClassifier.main(args);
-    String result =  outContent.toString();
+    String result = outContent.toString();
     assertEquals("The type of your triangle is equilateral!\n", result);
   }
 
@@ -46,11 +48,17 @@ class TriangleClassifierIT {
   }
 
   @Test
-  void shouldRespondWithErrorMessage() {
-    String[] args = {"-2", "4", "5"};
-    TriangleClassifier.main(args);
-    assertTrue(errContent.toString().contains(TriangleClassifier.invalidInputMessage));
-    assertTrue(errContent.toString().contains("Not all input characters are numeric"));
+  void whenLettersShouldRespondWithErrorMessage() {
+    String[] letters = {"two", "three", "four"};
+    TriangleClassifier.main(letters);
+    assertEquals(NON_NUMERIC_PARAMS.getMessage() + "\n", errContent.toString());
+  }
+
+  @Test
+  void whenNegativeNumbersShouldRespondWithErrorMessage() {
+    String[] negativeNumbers = {"-2", "4", "5"};
+    TriangleClassifier.main(negativeNumbers);
+    assertEquals(SIDES_TOO_SMALL.getMessage() + "\n", errContent.toString());
   }
 
   @AfterEach

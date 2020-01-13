@@ -2,11 +2,12 @@ package com.foursixfour;
 
 import org.junit.jupiter.api.Test;
 
-
+import static com.foursixfour.model.ErrorMessages.NON_NUMERIC_PARAMS;
+import static com.foursixfour.model.ErrorMessages.WRONG_AMOUNT_OF_INPUTS;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class TriangleClassifierTest {
+class InputValidatorUtilTest {
 
   @Test
   void shouldReturnErrorMessageWhenInputParamAmountIsIncorrect() {
@@ -21,8 +22,9 @@ class TriangleClassifierTest {
   }
 
   private void callInputValidation(String[] oneParam) {
-    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> TriangleClassifier.validateInputSize(oneParam));
-    assertTrue(e.getMessage().contains("Amount of inputs is incorrect"));
+    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () ->
+        InputValidatorUtil.validateInputSize(oneParam));
+    assertTrue(e.getMessage().contains(WRONG_AMOUNT_OF_INPUTS.getMessage()));
   }
 
   @Test
@@ -36,7 +38,8 @@ class TriangleClassifierTest {
   }
 
   private void callCharacterValidation(String[] oneParam) {
-    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> TriangleClassifier.validateCharacters(oneParam));
-    assertTrue(e.getMessage().contains("Not all input characters are numeric"));
+    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () ->
+        InputValidatorUtil.validateCharacters(oneParam));
+    assertTrue(e.getMessage().contains(NON_NUMERIC_PARAMS.getMessage()));
   }
 }
