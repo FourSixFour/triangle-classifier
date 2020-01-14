@@ -11,7 +11,7 @@ public class Triangle {
   private int sideC;
 
   public Triangle(int sideA, int sideB, int sideC) {
-    if(Stream.of(sideA, sideB, sideC).anyMatch(a -> a < 1)) {
+    if (Stream.of(sideA, sideB, sideC).anyMatch(a -> a < 1)) {
       throw new IllegalArgumentException(SIDES_TOO_SMALL.getMessage());
     }
     this.sideA = sideA;

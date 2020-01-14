@@ -13,26 +13,26 @@ class TriangleTest {
 
   @Test
   void whenAllSidesAreOfEqualLengthReturnEquilateral() {
-    triangle = new Triangle(2,2,2);
+    triangle = new Triangle(2, 2, 2);
     assertEquals(TriangleType.EQUILATERAL, triangle.getType());
   }
 
   @Test
   void whenTwoSidesAreOfEqualLengthReturnIsosceles() {
-    triangle = new Triangle(2,2,1);
+    triangle = new Triangle(2, 2, 1);
     assertEquals(TriangleType.ISOSCELES, triangle.getType());
   }
 
   @Test
   void whenNoSidesAreOfEqualLengthReturnScalene() {
-    triangle = new Triangle(1,2,3);
+    triangle = new Triangle(1, 2, 3);
     assertEquals(TriangleType.SCALENE, triangle.getType());
   }
 
   @Test
   void whenNonPositiveNumbersArePassedReturnErrorMessage() {
     IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () ->
-    new Triangle(-1,2,3));
+        new Triangle(-1, 2, 3));
     assertEquals(SIDES_TOO_SMALL.getMessage(), e.getMessage());
   }
 }

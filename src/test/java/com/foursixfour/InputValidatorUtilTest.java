@@ -17,7 +17,7 @@ class InputValidatorUtilTest {
     callInputValidation(oneParam);
     String[] twoParam = {"1", "2"};
     callInputValidation(twoParam);
-    String[] fourParam = {"1", "2", "3" ,"4"};
+    String[] fourParam = {"1", "2", "3", "4"};
     callInputValidation(fourParam);
   }
 
@@ -33,7 +33,7 @@ class InputValidatorUtilTest {
     callCharacterValidation(oneParam);
     String[] twoParam = {"a", "b"};
     callCharacterValidation(twoParam);
-    String[] fourParam = {"a", "b", "c" ,"d"};
+    String[] fourParam = {"a", "b", "c", "d"};
     callCharacterValidation(fourParam);
   }
 

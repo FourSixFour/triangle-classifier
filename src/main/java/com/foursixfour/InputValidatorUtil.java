@@ -28,12 +28,12 @@ public class InputValidatorUtil {
     return n > 0;
   }
 
-  private static boolean isANumber (String arg){
-      try {
-        Integer.parseInt(arg);
-        return true;
-      } catch (NumberFormatException e) {
-        return false;
-      }
+  private static boolean isANumber(String arg) {
+    try {
+      Integer.parseInt(arg);
+      return true;
+    } catch (NumberFormatException e) {
+      return false;
     }
   }
+}
