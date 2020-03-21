@@ -9,7 +9,10 @@ import java.io.PrintStream;
 
 import static com.foursixfour.model.ErrorMessages.NON_NUMERIC_PARAMS;
 import static com.foursixfour.model.ErrorMessages.SIDES_TOO_SMALL;
+import static com.foursixfour.model.ErrorMessages.WRONG_AMOUNT_OF_INPUTS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class TriangleClassifierIT {
