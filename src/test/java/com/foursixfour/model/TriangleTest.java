@@ -1,10 +1,10 @@
 package com.foursixfour.model;
 
+import com.foursixfour.model.triangle.Triangle;
+import com.foursixfour.model.triangle.TriangleType;
 import org.junit.jupiter.api.Test;
 
-import static com.foursixfour.model.ErrorMessages.SIDES_TOO_SMALL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TriangleTest {
 
@@ -27,12 +27,5 @@ class TriangleTest {
   void whenNoSidesAreOfEqualLengthReturnScalene() {
     triangle = new Triangle(1, 2, 3);
     assertEquals(TriangleType.SCALENE, triangle.getType());
-  }
-
-  @Test
-  void whenNonPositiveNumbersArePassedReturnErrorMessage() {
-    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () ->
-        new Triangle(-1, 2, 3));
-    assertEquals(SIDES_TOO_SMALL.getMessage(), e.getMessage());
   }
 }

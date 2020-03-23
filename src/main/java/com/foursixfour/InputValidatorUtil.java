@@ -1,20 +1,30 @@
 package com.foursixfour;
 
+import com.foursixfour.model.message.Output;
+import com.foursixfour.model.message.OutputMessage;
+import com.foursixfour.model.message.OutputType;
+
 import static java.util.Arrays.stream;
 
 public class InputValidatorUtil {
 
-  public static boolean isValidInput(String[] args) {
-    return consistsOfThreeArgs(args)
-        && paramsAreNumeric(args)
-        && paramsAreLargerThanZero(args);
+  public static Output getMessage(String[] args) {
+    if(!consistsOfThreeArgs(args)) {
+      return new Output(OutputType.ERROR, OutputMessage.WRONG_AMOUNT_OF_INPUTS);
+    } else if(!paramsAreNumeric(args)) {
+      return new Output(OutputType.ERROR, OutputMessage.NON_NUMERIC_PARAMS);
+    } else if(!paramsAreLargerThanZero(args)) {
+      return new Output(OutputType.ERROR, OutputMessage.SIDES_TOO_SMALL);
+    } else {
+      return new Output(OutputType.OUTPUT, OutputMessage.TRIANGLE_MESSAGE);
+    }
   }
 
-  public static boolean consistsOfThreeArgs(String[] args) {
+  private static boolean consistsOfThreeArgs(String[] args) {
     return args.length == 3;
   }
 
-  public static boolean paramsAreLargerThanZero(String[] args) {
+  private static boolean paramsAreLargerThanZero(String[] args) {
     return stream(args).allMatch(InputValidatorUtil::isLargerThanZero);
   }
 
@@ -23,7 +33,7 @@ public class InputValidatorUtil {
     return n > 0;
   }
 
-  public static boolean paramsAreNumeric(String[] args) {
+  private static boolean paramsAreNumeric(String[] args) {
     return stream(args).allMatch(InputValidatorUtil::isANumber);
   }
 

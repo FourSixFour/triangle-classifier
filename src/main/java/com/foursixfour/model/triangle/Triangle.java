@@ -1,8 +1,7 @@
-package com.foursixfour.model;
+package com.foursixfour.model.triangle;
 
 import java.util.stream.Stream;
 
-import static com.foursixfour.model.ErrorMessages.SIDES_TOO_SMALL;
 
 public class Triangle {
 
@@ -11,9 +10,6 @@ public class Triangle {
   private int sideC;
 
   public Triangle(int sideA, int sideB, int sideC) {
-    if (Stream.of(sideA, sideB, sideC).anyMatch(a -> a < 1)) {
-      throw new IllegalArgumentException(SIDES_TOO_SMALL.getMessage());
-    }
     this.sideA = sideA;
     this.sideB = sideB;
     this.sideC = sideC;

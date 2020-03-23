@@ -1,4 +1,4 @@
-package com.foursixfour.model;
+package com.foursixfour.model.triangle;
 
 public enum TriangleType {
   EQUILATERAL,
