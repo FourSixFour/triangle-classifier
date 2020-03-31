@@ -1,16 +1,21 @@
-# triangle-classifier
-Small console application that determines the type of a triangle based on the length of its sides.
+# Triangle Classifier
+> A tiny console application that determines the type of a triangle based on the length of its sides.
 
 ## Prerequisites
- 1. Java 8
+ 1. Java 8 or higher
  2. Maven 3
  
-## How to build locally
- 1. ```git clone``` ...
- 2. ```mvn package```
- 3. the jar file will be present in target directory
+## Installation
+ ```sh
+ cd /go/to/project/root
+ mvn package
+ ```
+The jar file will be present in target directory
 
-## How to run
+## Usage example
+```sh
+$ java -jar target/TriangleClassifier.jar 1 2 3
+The type of your triangle is scalene
 ```
-$ java -jar TriangleClassifier.jar 1 2 3
-```
+## Development setup
+Clone this repository and open it in your favorite IDE.
