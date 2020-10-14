@@ -1,8 +1,8 @@
-package com.foursixfour;
+package com.rationalagent.triangleclassifier.util;
 
-import com.foursixfour.model.message.Output;
-import com.foursixfour.model.message.OutputMessage;
-import com.foursixfour.model.message.OutputType;
+import com.rationalagent.triangleclassifier.util.message.Output;
+import com.rationalagent.triangleclassifier.util.message.OutputMessage;
+import com.rationalagent.triangleclassifier.util.message.OutputType;
 
 import static java.util.Arrays.stream;
 

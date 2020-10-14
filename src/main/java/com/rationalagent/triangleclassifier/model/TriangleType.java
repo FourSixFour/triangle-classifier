@@ -1,4 +1,4 @@
-package com.foursixfour.model.triangle;
+package com.rationalagent.triangleclassifier.model;
 
 public enum TriangleType {
   EQUILATERAL,

@@ -1,4 +1,4 @@
-package com.foursixfour.model.message;
+package com.rationalagent.triangleclassifier.util.message;
 
 public class Output {
   private OutputType outputType;

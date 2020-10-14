@@ -1,4 +1,4 @@
-package com.foursixfour;
+package com.rationalagent;
 
 
 import com.pholser.junit.quickcheck.generator.GenerationStatus;

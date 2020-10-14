@@ -1,14 +1,15 @@
-package com.foursixfour;
+package com.rationalagent.triangleclassifier;
 
-import com.foursixfour.model.message.Output;
-import com.foursixfour.model.message.OutputMessage;
-import com.foursixfour.model.message.OutputType;
-import com.foursixfour.model.triangle.Triangle;
+import com.rationalagent.triangleclassifier.util.message.Output;
+import com.rationalagent.triangleclassifier.util.message.OutputMessage;
+import com.rationalagent.triangleclassifier.util.message.OutputType;
+import com.rationalagent.triangleclassifier.model.Triangle;
+import com.rationalagent.triangleclassifier.util.InputValidatorUtil;
 
 import static java.lang.Integer.parseInt;
 
 
-public class TriangleClassifier {
+public class App {
 
   public static void main(String[] args) {
 

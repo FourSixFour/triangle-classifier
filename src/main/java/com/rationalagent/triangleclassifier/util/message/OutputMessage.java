@@ -1,4 +1,4 @@
-package com.foursixfour.model.message;
+package com.rationalagent.triangleclassifier.util.message;
 
 public enum OutputMessage {
   TRIANGLE_MESSAGE("The type of your triangle is "),

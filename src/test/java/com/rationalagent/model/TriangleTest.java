@@ -1,7 +1,7 @@
-package com.foursixfour.model;
+package com.rationalagent.model;
 
-import com.foursixfour.model.triangle.Triangle;
-import com.foursixfour.model.triangle.TriangleType;
+import com.rationalagent.triangleclassifier.model.Triangle;
+import com.rationalagent.triangleclassifier.model.TriangleType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

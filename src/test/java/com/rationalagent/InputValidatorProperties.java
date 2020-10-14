@@ -1,10 +1,10 @@
-package com.foursixfour;
+package com.rationalagent;
 
-import com.foursixfour.model.message.OutputType;
+import com.rationalagent.triangleclassifier.util.message.OutputType;
 import com.pholser.junit.quickcheck.From;
 import com.pholser.junit.quickcheck.Property;
 import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
-import org.junit.jupiter.api.Assertions;
+import com.rationalagent.triangleclassifier.util.InputValidatorUtil;
 import org.junit.runner.RunWith;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
